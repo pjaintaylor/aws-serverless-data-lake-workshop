@@ -17,4 +17,5 @@ resource "aws_cloudformation_stack" "this" {
     Username = random_string.this.result
     Password = random_password.this.result
   }
+  capabilities = ["CAPABILITY_IAM"]
 }
