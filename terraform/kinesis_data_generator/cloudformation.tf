@@ -1,11 +1,11 @@
 data "aws_region" "current" {}
 
 resource "random_string" "this" {
-  length = 16
+  length = 8
 }
 
 resource "random_password" "this" {
-  length = 16
+  length = 8
   min_numeric = 1
 }
 
