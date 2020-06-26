@@ -2,8 +2,8 @@ output "kinesis_data_generator_url" {
   value = aws_cloudformation_stack.this.outputs["KinesisDataGeneratorUrl"]
 }
 output "username" {
-  value = random_string.username.result
+  value = local.username
 }
 output "password" {
-  value = random_string.password.result
+  value = local.password
 }
