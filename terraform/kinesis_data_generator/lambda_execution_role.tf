@@ -50,8 +50,8 @@ data "aws_iam_policy_document" "lambda_execution_role_policy" {
       "iam:UpdateAssumeRolePolicy"
     ]
     resources = [
-      "arn:aws:iam::153787536644:role/Kinesis-Data-Generator-Cogni-AuthenticatedUserRole-3MT24OVJN0L4",
-      "arn:aws:iam::153787536644:role/Kinesis-Data-Generator-Cog-UnauthenticatedUserRole-1V3391H9UQIJV"
+      aws_iam_role.authenticated_user_role.arn,
+      aws_iam_role.unauthenticated_user_role.arn
     ]
     effect = "Allow"
   }
@@ -61,8 +61,8 @@ data "aws_iam_policy_document" "lambda_execution_role_policy" {
       "iam:PassRole"
     ]
     resources = [
-      "arn:aws:iam::153787536644:role/Kinesis-Data-Generator-Cogni-AuthenticatedUserRole-3MT24OVJN0L4",
-      "arn:aws:iam::153787536644:role/Kinesis-Data-Generator-Cog-UnauthenticatedUserRole-1V3391H9UQIJV"
+      aws_iam_role.authenticated_user_role.arn,
+      aws_iam_role.unauthenticated_user_role.arn
     ]
     effect = "Allow"
   }

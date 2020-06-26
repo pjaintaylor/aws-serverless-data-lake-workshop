@@ -7,16 +7,6 @@ data "aws_iam_policy_document" "authenticated_user_role_assume_role" {
       type = "Federated"
     }
     actions = ["sts:AssumeRoleWithWebIdentity"]
-    condition {
-      test = "StringEquals"
-      values = ["us-west-2:f3505d6d-0f19-447d-a3ba-e63a0d81e11e"]
-      variable = "cognito-identity.amazonaws.com:aud"
-    }
-    condition {
-      test = "ForAnyValue:StringLike"
-      values = ["authenticated"]
-      variable = "cognito-identity.amazonaws.com:amr"
-    }
   }
 }
 
