@@ -4,7 +4,7 @@ data "aws_lambda_invocation" "this" {
   function_name = aws_lambda_function.this.function_name
   input = <<JSON
 {
-  "ServiceToken": ${aws_lambda_function.this.arn},
+  "ServiceToken": "${aws_lambda_function.this.arn}",
   "Region": ${data.aws_region.current.name},
   "Username": ${random_string.this.result},
   "Password": ${random_password.this.result},
