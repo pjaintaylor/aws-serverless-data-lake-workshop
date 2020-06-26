@@ -1,6 +1,6 @@
 data "aws_region" "current" {}
 
-/*data "aws_lambda_invocation" "this" {
+data "aws_lambda_invocation" "this" {
   function_name = aws_lambda_function.this.function_name
   input = <<JSON
     "ServiceToken": {${aws_lambda_function.this.arn}},
@@ -12,4 +12,4 @@ data "aws_region" "current" {}
     "UnauthRoleName": {${aws_iam_role.unauthenticated_user_role.name}},
     "UnauthRoleArn": {${aws_iam_role.unauthenticated_user_role.arn}}
 JSON
-}*/
+}
