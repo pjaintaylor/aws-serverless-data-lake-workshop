@@ -6,7 +6,7 @@ resource "random_string" "this" {
 
 resource "random_password" "this" {
   length = 16
-  special = true
+  min_numeric = 1
 }
 
 resource "aws_cloudformation_stack" "this" {
